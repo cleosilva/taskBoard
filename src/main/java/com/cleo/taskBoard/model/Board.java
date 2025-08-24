@@ -3,7 +3,8 @@ package com.cleo.taskBoard.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Data // Anotação do Lombok para gerar getters, setters, toString, etc.
@@ -11,9 +12,9 @@ import java.time.OffsetDateTime;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
     @Column(nullable = false)// Garante que a coluna name não poderá ter valores nulos no banco de dados.
     private String name;
     private String description;
-    private OffsetDateTime createdAt;
+    private LocalDateTime createdAt;
 }

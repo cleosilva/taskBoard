@@ -1,8 +1,8 @@
 package com.cleo.taskBoard.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -11,7 +11,7 @@ public class Lane {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
     @Column(nullable = false)
     private String name;
     private Integer position;
