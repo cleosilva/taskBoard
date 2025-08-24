@@ -1,6 +1,9 @@
 package com.cleo.taskBoard.repository;
 
+import com.cleo.taskBoard.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TaskRepository extends JpaRepository {
+import java.util.UUID;
+
+public interface TaskRepository extends JpaRepository<Task, UUID> {
 }
