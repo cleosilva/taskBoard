@@ -1,5 +1,6 @@
 package com.cleo.taskBoard.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -7,6 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "board")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

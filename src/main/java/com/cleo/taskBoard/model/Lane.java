@@ -1,10 +1,12 @@
 package com.cleo.taskBoard.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
 @Table(name = "lane")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Lane {
 
     @Id
