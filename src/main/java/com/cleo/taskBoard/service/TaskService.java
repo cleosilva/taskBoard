@@ -2,21 +2,21 @@ package com.cleo.taskBoard.service;
 
 import com.cleo.taskBoard.dto.TaskDTO;
 import com.cleo.taskBoard.dto.TaskMoveDTO;
-import com.cleo.taskBoard.model.Lane;
 import com.cleo.taskBoard.model.Task;
 import com.cleo.taskBoard.repository.LaneRepository;
 import com.cleo.taskBoard.repository.TaskRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
 public class TaskService {
-    private final TaskRepository taskRepository;
-    private final LaneRepository laneRepository;
+    @Autowired
+    private TaskRepository taskRepository;
+    @Autowired
+    private LaneRepository laneRepository;
 
     public Task createOrUpdateTask(UUID laneId, TaskDTO taskDTO){
         // Encontra a lane por ID

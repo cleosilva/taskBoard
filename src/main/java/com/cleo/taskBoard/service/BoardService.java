@@ -4,13 +4,12 @@ import com.cleo.taskBoard.dto.BoardDTO;
 import com.cleo.taskBoard.model.Board;
 import com.cleo.taskBoard.repository.BoardRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-// @AllArgsConstructor: Anotação do Lombok que gera um construtor com todos os campos
-// da classe, permitindo a injeção de dependência de forma limpa e segura.
-@AllArgsConstructor
 public class BoardService {
+    @Autowired
     private BoardRepository boardRepository;
 
     public Board createBoard(BoardDTO boardDTO) {

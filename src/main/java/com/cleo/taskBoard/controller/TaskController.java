@@ -4,7 +4,7 @@ import com.cleo.taskBoard.dto.TaskDTO;
 import com.cleo.taskBoard.dto.TaskMoveDTO;
 import com.cleo.taskBoard.model.Task;
 import com.cleo.taskBoard.service.TaskService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +12,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("api/lanes/{laneId}/tasks")
-@AllArgsConstructor
 public class TaskController {
-    private final TaskService taskService;
+    @Autowired
+    private TaskService taskService;
 
     @PostMapping
     public ResponseEntity<Task> createTask(@PathVariable UUID laneId, @RequestBody TaskDTO taskDTO){

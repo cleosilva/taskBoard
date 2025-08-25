@@ -1,11 +1,9 @@
 package com.cleo.taskBoard.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import java.util.UUID;
 
 @Entity
-@Data
 @Table(name = "lane")
 public class Lane {
 
@@ -22,4 +20,38 @@ public class Lane {
     @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
+    public Lane() {
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
 }

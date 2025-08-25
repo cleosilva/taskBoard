@@ -10,7 +10,7 @@ CREATE TABLE lane (
     name VARCHAR(255) NOT NULL,
     position INTEGER NOT NULL,
     board_id UUID NOT NULL,
-    CONSTRAINT fk_board FOREIGN KEY (board_id) REFERENCES board(id) ON DELETE ON CASCADE
+    CONSTRAINT fk_board FOREIGN KEY (board_id) REFERENCES board(id) ON DELETE CASCADE
 );
 
 CREATE TABLE task (
@@ -22,6 +22,6 @@ CREATE TABLE task (
     lane_id UUID NOT NULL,
     created_at TIMESTAMP WITHOUT TIME ZONE,
     updated_at TIMESTAMP WITHOUT TIME ZONE,
-    CONSTRAINT fk_lane FOREIGN KEY (lane_id) REFERENCES lane(id) ON DELETE ON CASCADE
-)
+    CONSTRAINT fk_lane FOREIGN KEY (lane_id) REFERENCES lane(id) ON DELETE CASCADE
+);
 

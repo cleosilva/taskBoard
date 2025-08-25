@@ -4,6 +4,7 @@ import com.cleo.taskBoard.dto.BoardDTO;
 import com.cleo.taskBoard.model.Board;
 import com.cleo.taskBoard.service.BoardService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/boards")
-@AllArgsConstructor
 public class BoardController {
-    private final BoardService boardService;
+
+    @Autowired
+    private BoardService boardService;
 
     @PostMapping
     public ResponseEntity<Board> createBoard(@RequestBody BoardDTO boardDTO) {
